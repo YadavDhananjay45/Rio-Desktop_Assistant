@@ -44,7 +44,7 @@ def reply():
     import speech_recognition as sr
     import pyttsx3
     import openai
-    openai.api_key = "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"
+    openai.api_key = "Enter your API-key here:"
     speak("hello sir,tell me what can I do for you")
     from gptbot import my_bot
     my_bot()
@@ -111,29 +111,6 @@ btn10.place(x=50,y=660)
 
 output = Text(root, height=1,width=14,bg="light cyan")
 output.place(x=321,y=588)
-
-#chatbot window code
-# def chatbot():
-#     bot = Toplevel()
-#     bot.title("Voice-Based ChatBot")
-#     bot.geometry("450x400")
-
-#     bot.maxsize(450, 400)
-#     bot.minsize(450, 400)
-
-
-#     bot['background'] = "#8ad4eb"
-
-#     label1 = Label(bot, text="This is an internet based chatbot which takes \nvoice input and gives voice and text output\n And to End conversation say 'bye'", bg="#b6d4e7",
-#                    fg="black", font=('calibre', 10, 'bold'), bd=5)
-#     label1.pack(fill=BOTH, expand=True, padx=22, pady=25)
-
-#     btn12 = Button(bot, text="Start ", command=lambda:chatbot_material() , width=25, height=2, activebackground="red",
-#                   activeforeground="black", bd="2px", font=("Times_New_Roman", 8))
-#     btn12.place(x=115, y=250)
-
-
-
 
 #setting up voice
 engine = pyttsx3.init('sapi5')
@@ -306,11 +283,6 @@ def weather():
 def terminate(ProcessName):
     os.system('taskkill /IM "' + ProcessName + '" /F')
 
-
-# def ip_address():
-#    ip = get("https://api.ipify.org").text
-#    speak(f"your IP address is {ip}")
-
 #this is main fucntion which contain most of the features
 def taskexecution():
     #wish()
@@ -426,48 +398,7 @@ def taskexecution():
     elif "open calculator" in query or "do calculation for me" in query:
         from calc import buildCalc
         buildCalc()
-        # import math
-        # from pygame import mixer
-        # import speech_recognition
-        # from calc import buildCalc
-        # buildCalc()
-
-        # try:
-        #     r = sr.Recognizer()
-        #     with sr.Microphone() as source:
-        #         speak("tell me what i have to calculate")
-        #         print("listening...")
-        #         r.adjust_for_ambient_noise(source)
-        #         audio = r.listen(source)
-        #     my_string = r.recognize_google(audio)
-        #     print(my_string)
-        # except Exception as e:
-        #     print(e)
-        # except KeyboardInterrupt:
-        #     pass
-
-        # try:
-        #     def get_operator_fn(op):
-        #         return {
-        #             "+": operator.add,
-        #             "-": operator.sub,
-        #             "x": operator.mul,
-        #             "/": operator.truediv,
-        #         }[op]
-
-        #     def eval_binary_expr(op1, oper, op2):
-        #         op1, op2 = int(op1), int(op2)
-        #         return get_operator_fn(oper)(op1, op2)
-
-        #     # speak("your result is")
-        #     speak(eval_binary_expr(*(my_string.split())))
-        # except Exception as e:
-        #     print(e)
-        #     speak("sorry sir, i didn't get it , can you repeat again")
-        # except KeyboardInterrupt:
-        #     pass
-
-
+      
     elif "bmi" in query or "open bmi calculator" in query or "open bmi" in query:
         calculate_bmi()
 
@@ -502,8 +433,8 @@ def taskexecution():
         pyautogui.press("enter")
 
     elif "send messgae" in query or "send a message" in query:
-        account_sid="AC58a87373a76d90d71a5dba1a59571184"
-        auth_token="806903c2b8321331ae8526a2b993a16f"
+        account_sid="Enter your twilio account_sid here"
+        auth_token="Enter your twilio Token here:"
         client=Client(account_sid,auth_token)
 
         speak("what should i send")
