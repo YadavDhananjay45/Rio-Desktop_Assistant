@@ -31,11 +31,11 @@ b_image = PhotoImage(file="BG.png")
 my_label=Label(root,image=b_image)
 my_label.place(x=0,y=0)
 
-launch=PhotoImage(file="LAUNCH.png")
-end_me=PhotoImage(file="end_me.png")
-help_btn=PhotoImage(file="HELP.png")
-voice_btn=PhotoImage(file="Voice_btn.png")
-search_btn=PhotoImage(file="search.png")
+launch=PhotoImage(file="images/LAUNCH.png")
+end_me=PhotoImage(file="images/end_me.png")
+help_btn=PhotoImage(file="images/HELP.png")
+voice_btn=PhotoImage(file="images/Voice_btn.png")
+search_btn=PhotoImage(file="images/search.png")
 
 
 
@@ -93,7 +93,7 @@ def info():
 btn1 =Button(root, image=launch,command = lambda:work(),background="#050541",bd=0,activebackground="#050541")
 btn1.place(x=290,y=520)
 
-start_info = PhotoImage(file="HELP2.png")
+start_info = PhotoImage(file="images/HELP2.png")
 img = Button(root,image=start_info,borderwidth=0 ,command=lambda :info(),activebackground="#050541",background="#050541",bd=0)
 img.place(x=650,y=90)
 
@@ -441,8 +441,9 @@ def taskexecution():
         msz=takecommand()
         message=client.messages.create(
             body=msz,
-            from_="+16074007094",
-            to="+919892237977"
+            from_="Enter you Twilio number",
+            to="Enter receivers contact number"
+            # contact number should be verified on twilio's website
         )
 
         print(message.sid)
