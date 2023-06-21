@@ -24,10 +24,10 @@ root.geometry("750x800+1+1")
 
 root.maxsize(750,800)
 root.minsize(750,800)
-icon_img=PhotoImage(file="voice-recorder.png")
+icon_img=PhotoImage(file="images/voice-recorder.png")
 root.iconphoto(False,icon_img)
 root.title("Rio-Desktop Assistant")
-b_image = PhotoImage(file="BG.png")
+b_image = PhotoImage(file="images/BG.png")
 my_label=Label(root,image=b_image)
 my_label.place(x=0,y=0)
 
